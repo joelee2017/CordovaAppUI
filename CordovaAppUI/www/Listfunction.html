@@ -18,19 +18,30 @@
     <link href="css/style.css" rel="stylesheet" />
     <title>IONICUI</title>
 </head>
-    <body ng-app="App">
+    <body ng-app="App" ng-controller="HomeCtrl">
         <ion-header-bar class="bar-balanced" align-title="center">
-            <button class="button icon ion-happy-outline"></button>
-            <h1 class="title">MyAPP</h1>
+            <div class="buttons" >
+                <button class="button icon icon
+                        ion-trash-a" ng-click="showDelete =!showDelete"></button>
+                <h1 class="title">MyAPP</h1>
+            </div>
         </ion-header-bar>
         <ion-content class="padding">
-            <p>MSIT117</p>
+          <ion-list  show-delete="showDelete" show-reorder="true" class="list list-editing">
+              <ion-item ng-repeat="item in items" class="item-icon-left">
+                  <ion-delete-button class="ion-trash-a" ng-click="deleteItem(item)"></ion-delete-button>                  
+                  <ion-reorder-button class="ion-navicon" on-reorder="moveItem(item, $fromIndex, $toIndex)"></ion-reorder-button>
+                  <i class="icon ion-clock"></i>
+                  <h5>item{{item.id}}</h5>
+                  <h5>{{item.value}}</h5>
+              </ion-item>
+          </ion-list>
         </ion-content>
         <ion-footer-bar class="bar-calm">
         </ion-footer-bar>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="scripts/platformOverrides.js"></script>
         <script src="lib/ionic/js/ionic.bundle.min.js"></script>
-        <script src="scripts/app.js"></script>
+        <script src="scripts/Listfunction.js"></script>
     </body>
 </html>

@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!--
+        視需要在下方的中繼標籤中自訂內容安全性原則。將 'unsafe-inline' 加入 default-src 以啟用內嵌 JavaScript。
+        如需詳細資料，請參閱 http://go.microsoft.com/fwlink/?LinkID=617521
+    -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <!--引用檔-->
+    <link href="css/ionic.app.min.css" rel="stylesheet" />
+    <link href="lib/ionic/css/ionic.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <title>IONICUI</title>
+</head>
+<body ng-app="App">
+    <ion-nav-bar class="bar-balanced"></ion-nav-bar>
+    <ion-nav-view></ion-nav-view>
+    <script id="templates/tabs.html" type="text/ng-template">
+        <ion-tabs class="tabs-striped tabs-top 
+                  tabs-background-positive tabs-color-light">
+            <ion-tab title="Home" icon="ion-home" href="#/tab/home">
+                <ion-nav-view name="home-tab"></ion-nav-view>
+            </ion-tab>
+            <ion-tab title="Settings" icon="ion-settings" href="#/tab/settings">
+                <ion-nav-view name="settings-tab"></ion-nav-view>
+            </ion-tab>
+            <ion-tab title="About" icon="ion-android-bulb" 
+                     href="#/tab/about">
+                <ion-nav-view name="about-tab"></ion-nav-view>
+            </ion-tab>
+        </ion-tabs>
+    </script>
+    <script id="templates/home.html" type="text/ng-template">
+        <ion-view view-title="Home">
+            <ion-content>
+                <p>Home</p>
+            </ion-content>
+        </ion-view>
+    </script>
+    <script id="templates/settings.html" type="text/ng-template">
+        <ion-view view-title="Settings">
+            <ion-content>
+                <p>Settings</p>
+            </ion-content>
+        </ion-view>
+    </script>
+    <script id="templates/about.html" type="text/ng-template">
+        <ion-view view-title="About">
+            <ion-content>
+                <p>About</p>
+            </ion-content>
+        </ion-view>
+    </script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+    <script src="lib/ionic/js/ionic.bundle.min.js"></script>
+    <script src="scripts/tab.js"></script>
+</body>
+</html>

@@ -18,19 +18,13 @@
     <link href="css/style.css" rel="stylesheet" />
     <title>IONICUI</title>
 </head>
-    <body ng-app="App">
-        <ion-header-bar class="bar-balanced" align-title="center">
-            <button class="button icon ion-happy-outline"></button>
-            <h1 class="title">MyAPP</h1>
-        </ion-header-bar>
-        <ion-content class="padding">
-            <p>MSIT117</p>
-        </ion-content>
-        <ion-footer-bar class="bar-calm">
-        </ion-footer-bar>
+    <body ng-app="App" ng-controller="HomeCtrl">
+        <button class="button" ng-click="OpenActionSheet()">
+            顯示ActionSheet
+        </button>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="scripts/platformOverrides.js"></script>
         <script src="lib/ionic/js/ionic.bundle.min.js"></script>
-        <script src="scripts/app.js"></script>
+        <script src="scripts/ActionSheet.js"></script>
     </body>
 </html>
