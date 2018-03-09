@@ -38,7 +38,7 @@ app.controller('HomeCtrl', function ($scope, $ionicModal) {
         $scope.modal.hide();
     }
     $scope.createContact = function (newContact) {
-        $scope.contacts.push({ name: newContact.LastName + '' + newContact.FirstName });
-        $scope.modal.hideModal();
+        $scope.contacts.push({ name: newContact.LastName + ' ' + newContact.FirstName });
+        $scope.modal.hide();
     };
 });
