@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!--
+        視需要在下方的中繼標籤中自訂內容安全性原則。將 'unsafe-inline' 加入 default-src 以啟用內嵌 JavaScript。
+        如需詳細資料，請參閱 http://go.microsoft.com/fwlink/?LinkID=617521
+    -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <!--引用檔-->
+    <link href="css/ionic.app.min.css" rel="stylesheet" />
+    <link href="lib/ionic/css/ionic.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <title>IONICUI</title>
+</head>
+    <body ng-app="App" ng-controller="HomeCtrl">
+        <a ng-click="openPopover($event)">
+            <img style="width:96px;height:96px" src="images/65.jpg" />
+        </a>
+        <script id="popover.html" type="text/ng-template">
+            <ion-popover-view>
+                <ion-header-bar>
+                    <h1 class="title">放大檢視</h1>
+                </ion-header-bar>
+                <ion-content>
+                    <img style="width:100%;height:auto" src="images/65.jpg" />
+                </ion-content>
+            </ion-popover-view>
+        </script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+        <script src="lib/ionic/js/ionic.bundle.min.js"></script>
+        <script src="scripts/Popover.js"></script>
+    </body>
+</html>

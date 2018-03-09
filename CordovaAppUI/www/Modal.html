@@ -18,35 +18,39 @@
     <link href="css/style.css" rel="stylesheet" />
     <title>IONICUI</title>
 </head>
-    <body ng-app="App">
+    <body ng-app="App" ng-controller="HomeCtrl">
         <ion-header-bar class="bar-balanced" align-title="center">
-            <button class="button icon ion-compose" ng-click="showModal()"></button>
+            <button class="button button icon ion-compose" ng-click="showModal()"></button>
             <h1 class="title">聯絡人</h1>
         </ion-header-bar>
         <ion-content class="padding">
             <ion-list>
-                <io-item ng-repeat="contact in contacts">
+                <ion-item ng-repeat="contact in contacts">
                     {{contact.name}}
-                </io-item>
+                </ion-item>
             </ion-list>
         </ion-content>
         <script id="templates/Contact.html" type="text/ng-template">
             <ion-modal-view>
-                <ion-header-bar class="bar-balanced" align-title="center">
-                    <button class="button icon ion-android-cancel" ng-click="hideModal()"></button>
+                <ion-header-bar class="bar bar-balanced bar-positive" align-title="center">
+                    <button class="button icon ion-android-cancel" 
+                            ng-click="hideModal()"></button>
                     <h1 class="title">新增聯絡人</h1>
                 </ion-header-bar>
                 <ion-content class="padding">
                     <div class="list">
                         <label class="item item-input">
                             <span class="input-label">姓</span>
-                            <input type="text" ng-model="newContact.LastName" />
+                            <input type="text" 
+                                   ng-model="newContact.LastName" />
                         </label>
                         <label class="item item-input">
                             <span class="input-label">名</span>
-                            <input type="text" ng-model="newContact.FirstName" />
+                            <input type="text" 
+                                   ng-model="newContact.FirstName" />
                         </label>
-                        <button class="button button-block button-balanced" ng-click="createContact(newContact)">新增</button>
+                        <button class="button button-block button-balanced" 
+                                ng-click="createContact(newContact)">新增</button>
                     </div>
                 </ion-content>
             </ion-modal-view>
@@ -54,6 +58,6 @@
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="scripts/platformOverrides.js"></script>
         <script src="lib/ionic/js/ionic.bundle.min.js"></script>
-        <script src="scripts/app.js"></script>
+        <script src="scripts/Modal.js"></script>
     </body>
 </html>

@@ -23,22 +23,16 @@ app.run(function($ionicPlatform) {
   });
 })
 
-app.controller('HomeCtrl', function ($scope, $ionicModal) {
-    $scope.contacts = [{ name: 'joe 101' }, { name: 'ken 102' }, { name: 'kay 103' }];
-    $scope.showModal = function () {
-        $scope.newContact = null;
-        $ionicModal.fromTemplateUrl('templates/Contact.html', {
-            scope: $scope
-        }).then(function (modal) {
-            $scope.modal = modal;
-            modal.show();
-        });
-    }
-    $scope.hideModal = function () {
-        $scope.modal.hide();
-    }
-    $scope.createContact = function (newContact) {
-        $scope.contacts.push({ name: newContact.LastName + '' + newContact.FirstName });
-        $scope.modal.hideModal();
+app.controller('HomeCtrl', function ($scope, $ionicPopover) {
+    $ionicPopover.fromTemplateUrl('popover.html', {
+        scope: $scope
+    }).then(function (popover) {
+        $scope.popover = popover;
+    });
+    $scope.openPopover = function ($event) {
+        $scope.popover.show($event);
     };
-});
+    $scope.closePopover = function () {
+        $scope.popover.hide();
+    };
+})
