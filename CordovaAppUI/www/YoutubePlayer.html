@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!--
+        視需要在下方的中繼標籤中自訂內容安全性原則。將 'unsafe-inline' 加入 default-src 以啟用內嵌 JavaScript。
+        如需詳細資料，請參閱 http://go.microsoft.com/fwlink/?LinkID=617521
+    -->
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">-->
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <!--引用檔-->
+    <link href="css/ionic.app.min.css" rel="stylesheet" />
+    <link href="lib/ionic/css/ionic.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <title>IONICUI</title>
+</head>
+<body ng-app="App">
+    <ion-header-bar class="bar-positive" align-title="center">
+        <h1 class="title">YouTube影片</h1>
+    </ion-header-bar>
+    <ion-content class="padding" ng-controller="HomeCtrl">
+        <div>
+            <label class="item item-input">
+                <input type="search" placeholder="請輸入飾選關鍵字"
+                       ng-model="searchkeyword" />
+                <button class="button icon ion-search"
+                        ng-click="searchYouTube()" data-tap-disabled="true">
+
+                </button>
+            </label>
+        </div>
+        <div class="list card" ng-repeat="video in videos">
+            <div class="item item-text-wrap">
+                <h2>{{video.snippet.title}}</h2>
+                <p>{{video.snippet.publishedAt}}</p>
+            </div>
+            <div class="embed-responsive embed-responsive-16by9">
+                <!--<img ng-src="{{video.snippet.thumbnails.high.url}}" />-->
+                <youtube-video class="embed-responsive-item"
+                               video-id="video.id.videoId" player-vars="playerVars">
+                </youtube-video>
+            </div>
+        </div>
+    </ion-content>
+    <ion-footer-bar class="bar-calm">
+    </ion-footer-bar>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+    <script src="lib/ionic/js/ionic.bundle.min.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="lib/angular/angular-youtube-embed.min.js"></script>
+    <script src="scripts/YoutubePlayer.js"></script>
+</body>
+</html>
